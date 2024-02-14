@@ -25,3 +25,5 @@ jobs:
       - name: Log Go Version
         run: go version
 
+      - name: Check golang formatting
+        run: test -z $(go fmt ./...)
