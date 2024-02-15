@@ -135,10 +135,3 @@ Run the migrations
 ```
 
 SHOW TABLES; in the shell should now show the newly created table
-+---------------------+
-| Tables_in_notely-db |
-+---------------------+
-| goose_db_version    |
-| notes               |
-| users               |
-+---------------------+
