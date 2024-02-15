@@ -24,4 +24,22 @@ go build -o notely && ./notely
 
 - You do *not* need to set up a database or any interactivity on the webpage yet. Instructions for that will come later in the course!
 
+install gosec with Go
+```
+go install github.com/securego/gosec/v2/cmd/gosec@latest
+```
 
+or install gosec with brew
+```
+brew install gosec
+```
+
+install staticcheck with Go
+```
+go install honnef.co/go/tools/cmd/staticcheck@latest
+```
+
+or install staticcheck with Brew
+```
+brew install gosec
+```
