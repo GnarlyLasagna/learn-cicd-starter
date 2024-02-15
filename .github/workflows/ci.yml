@@ -24,6 +24,13 @@ jobs:
 
       - name: Log Go Version
         run: go version
+          
+      - name: Install gosec
+        run: go install github.com/securego/gosec/v2/cmd/gosec@latest
+
+      - name: Run security checks
+        run: gosec ./...
+
 
   style:
     name: Style
