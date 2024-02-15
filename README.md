@@ -76,4 +76,69 @@ gcloud init
 gcloud config list
 ```
 
+PLANETSCALE
+PlanetScale is a cloud provider that specializes in hosting serverless MySQL databases. It's a great fit for Notely because it has a very generous free Hobby tier, and it's easy to use. It will require you to add a card, but you will not be charged unless you create a Scaler or Scaler Pro database.
 
+PlanetScale runs on top of AWS/GCP infrastructure, so it's easy to keep latency low between our Cloud Run service and our database.
+
+
+install the MySQL driver:
+```
+go get -u github.com/go-sql-driver/mysql
+```
+
+Next, you can install GoDotEnv for accessing your database credentials:
+```
+go get -u github.com/joho/godotenv
+```
+
+install planetscale cli
+```
+brew install planetscale/tap/pscale
+```
+
+authorize login
+```
+pscale auth login
+```
+
+enter shell for PLANETSCALE
+```
+pscale shell notely-db main
+```
+
+To make sure the database is working, run the following queries:
+check version in the shell 
+```
+SELECT @@version;
+```
+
+create test table
+```
+CREATE TABLE test (
+  id INT,
+  name TEXT
+);
+```
+
+show the table, then drop it for testing
+```
+SHOW TABLES;
+```
+```
+DROP TABLE test;
+```
+
+Run the migrations
+```
+./scripts/migrateup.sh
+```
+
+SHOW TABLES; in the shell should now show the newly created table
++---------------------+
+| Tables_in_notely-db |
++---------------------+
+| goose_db_version    |
+| notes               |
+| users               |
++---------------------+
