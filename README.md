@@ -61,3 +61,4 @@ Run the Docker image locally:
 docker run -e PORT=8080 -p 8080:8080 DOCKERHUB_NAMESPACE/notely:latest
 ```
 Open the app in your browser at http://localhost:8080. You should see the Notely app running locally!
+
