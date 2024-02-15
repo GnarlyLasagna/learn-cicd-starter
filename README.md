@@ -135,3 +135,25 @@ Run the migrations
 ```
 
 SHOW TABLES; in the shell should now show the newly created table
+
+
+# RECAP OF YOUR ACCOMPLISHMENTS:
+- You set up a continuous integration pipeline with GitHub Actions that ensures new PRs pass certain checks before they are merged to main:
+Unit tests pass
+    - Formatting checks pass
+    - Linting checks pass
+    - Security checks pass
+
+- You configured a cloud-based MySQL database hosted on PlanetScale
+- You set up a continuous deployment pipeline with GitHub Actions that does the following whenever changes are merged into main:
+    - Builds a new server binary
+    - Builds a new Docker image for the server
+    - Pushes the Docker image to the Google Artifact Registry
+    - Deploys a new Cloud Run revision with the new image and serves the app to the public internet
+Pat yourself on the back! That's a pretty robust setup for our simple CRUD app.
+
+# SOME THINGS TO KEEP IN MIND
+- GCP is just one of the 3 major cloud providers. AWS and Azure are also popular choices. In many ways, their offerings are similar, but sometimes the differences matter.
+- Cloud Run handles a lot of complexity for you. Managing DNS, SSL, load balancing, and auto-scaling are all things that many companies do manually, so those are still useful skills to have, but are outside the scope of this course.
+- PlanetScale is a fully-managed third-party database host. There are many options out there for databases and database hosting that are worth learning about, but again, outside the scope of this course.
+- Essentially every technology/product we used in this course has viable alternatives. You don't need to know how to use all of them before your first job, but you should understand some of them.
